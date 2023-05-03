@@ -9,4 +9,4 @@ Here are the objectives for the project.
 2. To use most, if not all, of the concepts that I learned throughout the
    course.
    -CSS flexbox
-   -JS array methods, event listeners, object
+   -JS array methods, event listeners, objects

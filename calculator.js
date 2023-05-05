@@ -1,16 +1,17 @@
 //This is the JS file for the calculator project
-function add(firstNum, secondNum) {
-  return firstNum + secondNum;
+//Use an array to collect the data and use the indicies needed for numbers and operators
+let firstNum = 5
+let secondNum = 8
+let op = "*"
+
+function performOperation(op, a, b) {
+   switch(op) {
+    case "+": return a + b;
+    case "-": return a - b;
+    case "*": return a * b;
+    case "/": return a / b;
+    default: "ERROR"
+   }
 }
 
-function subtract(firstNum, secondNum) {
-  return firstNum - secondNum;
-}
-
-function multiply(firstNum, secondNum) {
-  return firstNum * secondNum;
-}
-
-function divide(firstNum, secondNum) {
-  return firstNum / secondNum;
-}
+performOperation(op, firstNum, SecondNum)

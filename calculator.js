@@ -1,17 +1,52 @@
-//This is the JS file for the calculator project
-//Use an array to collect the data and use the indicies needed for numbers and operators
-let firstNum = 5
-let secondNum = 8
-let op = "*"
+const numBtn = document.querySelectorAll("[data-number]");
+const opBtn = document.querySelectorAll("[data-operation]");
+const equalsBtn = document.querySelector("[data-equals");
+const deleteButton = document.querySelector("[data-delete]");
+const allClearButton = document.querySelector("[data-clear]");
+const previousOperandTextElement = document.querySelector(
+  "[data-previous-operand]"
+);
+const currentOperandTextElement = document.querySelector(
+  "[data-current-operand]"
+);
 
-function performOperation(op, a, b) {
-   switch(op) {
-    case "+": return a + b;
-    case "-": return a - b;
-    case "*": return a * b;
-    case "/": return a / b;
-    default: "ERROR"
-   }
+const calculator = new Calculator(
+  previousOperandTextElement,
+  currentOperandTextElement
+);
+
+numBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    calculator.appendNumber(button.innerText);
+    calculator.updateDisplay();
+  });
+});
+//Create a class that will allow us to store and process these operands and operators, display them, and clear them
+
+class Calculator {
+  constructor(previousOperandTextElement, currentOperandTextElement) {
+    this.previousOperandTextElement = previousOperandTextElement;
+    this.currentOperandTextElement = currentOperandTextElement;
+    this.clear();
+  }
+
+  clear() {
+    this.currentOperand = "";
+    this.previousOperand = "";
+    this.operation = undefined;
+  }
+
+  delete() {}
+
+  appendNumber(number) {
+    this.currentOperand = number;
+  }
+
+  chooseOperation(operation) {}
+
+  compute() {}
+
+  updateDisplay() {
+    this.currentOperandTextElement.innerText = this.currentOperand;
+  }
 }
-
-performOperation(op, firstNum, SecondNum)

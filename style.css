@@ -1,1 +1,16 @@
 /* This is going to be the css file for the calculator project */
+.output {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.output .previous-operand {
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  font-size: 2.5rem;
+}
